@@ -56,8 +56,5 @@ AI-powered Healthcare & Diet Planner that helps users with **personalized diet p
 
 ## 🌐 Live Demo
 
-🚀 Deploy this project instantly on Vercel:
-
-[![Deploy with Vercel](https://vita-nova-ai.vercel.app/)
----
-
+🚀 Check out the live project here:  
+👉 https://vita-nova-ai.vercel.app/
