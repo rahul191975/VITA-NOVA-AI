@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vita Nova AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <h2>Vita Nova AI</h2>
+            <p>Your Personal AI Health Assistant</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>Vita Nova AI</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#upload">Upload Report</a></li>
+                <li><a href="#scanner">Scanner</a></li>
+                <li><a href="#unified">AI Analyzer</a></li>
+                <li><a href="#diet">Diet Plan</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Vita Nova AI</span>
+                <br>
+                
+            </h1>
+            <p class="hero-tagline">
+                AI-powered personalized diet planning and grocery analysis for healthier living.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary glow-btn">
+                    <i class="fas fa-rocket"></i> Get Started
+                </button>
+                <button class="btn btn-secondary glow-btn">
+                    <i class="fas fa-file-medical"></i> Upload Report
+                </button>
+            </div>
+     
+        </div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <i class="fas fa-apple-alt"></i>
+                <span>Healthy Foods</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-brain"></i>
+                <span>AI Analysis</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-chart-line"></i>
+                <span>Track Progress</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powerful Features</h2>
+                <p class="section-subtitle">AI-driven tools for your health journey</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>AI Diet Plan Generator</h3>
+                    <p>Personalized meal plans based on your health data and preferences</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-barcode"></i>
+                    </div>
+                    <h3>Grocery Barcode Scanner</h3>
+                    <p>Scan products instantly to get nutritional information</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Product OCR Analysis</h3>
+                    <p>Extract nutrition facts from product labels using AI</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-medical-alt"></i>
+                    </div>
+                    <h3>Disease Report Upload</h3>
+                    <p>Upload medical reports for AI-powered health analysis</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <h3>AI Health Analysis</h3>
+                    <p>Comprehensive health insights from your medical data</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-week"></i>
+                    </div>
+                    <h3>Weekly Meal Planner</h3>
+                    <p>Plan your entire week with balanced nutrition</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <h3>Indian Food Recommendations</h3>
+                    <p>Localized diet suggestions for Indian cuisine</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Nutrition Chatbot</h3>
+                    <p>24/7 AI assistant for all your nutrition queries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Medical Report Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Medical Report Analysis</h2>
+                <p class="section-subtitle">Upload your reports for AI-powered health insights</p>
+            </div>
+            <div class="upload-container">
+                <div class="upload-box glass-card" id="uploadBox">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drag & Drop Your Report</h3>
+                        <p>Supports PDF and Image files</p>
+                        <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" hidden>
+                        <button class="btn btn-primary" id="browseBtn">
+                            <i class="fas fa-folder-open"></i> Browse Files
+                        </button>
+                    </div>
+                    <div class="file-preview" id="filePreview">
+                        <i class="fas fa-file-pdf"></i>
+                        <span id="fileName">medical_report.pdf</span>
+                        <button class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="analyze-btn-container">
+                    <button class="btn btn-primary glow-btn" id="analyzeBtn">
+                        <i class="fas fa-microscope"></i> Analyze Report
+                    </button>
+                </div>
+                <div class="loading-animation" id="loadingAnimation" style="display: none; width: 100%;">
+                    <div class="doc-scan-hud glass-card">
+                        <div class="doc-scan-visual">
+                            <i class="fas fa-file-medical-alt"></i>
+                            <div class="doc-scan-laser"></div>
+                        </div>
+                        <div class="doc-scan-percentage" id="docScanPercent">0%</div>
+                        <div class="doc-scan-progress-wrapper">
+                            <div class="doc-scan-progress-fill" id="docScanProgressFill"></div>
+                        </div>
+                        <ul class="doc-scan-checklist">
+                            <li id="reportStep1" class="pending"><i class="fas fa-circle-notch fa-spin-slow"></i> <span>Initializing secure upload & OCR engine...</span></li>
+                            <li id="reportStep2" class="pending"><i class="far fa-circle"></i> <span>Parsing clinical markers & reference ranges...</span></li>
+                            <li id="reportStep3" class="pending"><i class="far fa-circle"></i> <span>Correlating health risks & metabolic metrics...</span></li>
+                            <li id="reportStep4" class="pending"><i class="far fa-circle"></i> <span>Crafting custom diet recommendations...</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="result-card glass-card" id="resultCard">
+                    <div class="result-header">
+                        <h3><i class="fas fa-chart-pie"></i> Health Analysis Results</h3>
+                    </div>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-label">Blood Sugar</div>
+                            <div class="result-value warning">120 mg/dL</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">HbA1c</div>
+                            <div class="result-value success">6.2%</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Health Risk</div>
+                            <div class="result-value moderate">Moderate</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Recommended Diet</div>
+                            <div class="result-value diet">Low Carb, High Protein</div>
+                        </div>
+                    </div>
+                    <div class="recommendations">
+                        <h4><i class="fas fa-lightbulb"></i> AI Recommendations</h4>
+                        <ul>
+                            <li>Increase fiber intake with whole grains</li>
+                            <li>Reduce sugar consumption by 30%</li>
+                            <li>Add 30 minutes of daily exercise</li>
+                            <li>Stay hydrated with 8 glasses of water</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grocery Scanner Section -->
+    <section class="scanner-section" id="scanner">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Smart Scanner</h2>
+                <p class="section-subtitle">Scan products to know their health impact</p>
+            </div>
+            <div class="scanner-container">
+                <div class="scanner-ui glass-card">
+                    <div class="scanner-frame" style="position: relative; overflow: hidden;">
+                        <video id="cameraFeed" autoplay playsinline style="display: none; width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1;"></video>
+                        <canvas id="cameraCanvas" style="display: none;"></canvas>
+                        <img id="scannerPreviewImg" class="scanner-preview-img" alt="Scanned Product" style="display: none;">
+                        <div class="scanner-line" style="z-index: 2;"></div>
+                        <div class="scanner-corner top-left" style="z-index: 2;"></div>
+                        <div class="scanner-corner top-right" style="z-index: 2;"></div>
+                        <div class="scanner-corner bottom-left" style="z-index: 2;"></div>
+                        <div class="scanner-corner bottom-right" style="z-index: 2;"></div>
+                        <i class="fas fa-barcode scanner-icon" style="z-index: 2; position: relative;"></i>
+                        
+                        <!-- HUD Overlay for Scanning Animation -->
+                        <div class="scanner-hud-overlay">
+                            <div class="scanner-hud-grid"></div>
+                            <!-- Simulated OCR bounding boxes -->
+                            <div class="ocr-bounding-box box-1" style="top: 20%; left: 15%; width: 60%; height: 12%;"></div>
+                            <div class="ocr-bounding-box box-2" style="top: 40%; left: 25%; width: 50%; height: 10%;"></div>
+                            <div class="ocr-bounding-box box-3" style="top: 55%; left: 10%; width: 75%; height: 15%;"></div>
+                            <div class="ocr-bounding-box box-4" style="top: 75%; left: 30%; width: 40%; height: 10%;"></div>
+                            <div class="scanner-hud-console">
+                                <span class="scanner-hud-text" id="scannerHudStatus">ANALYZING LABEL...</span>
+                                <span class="scanner-hud-percentage" id="scannerHudPercent">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scanner-controls">
+                        <button class="btn btn-primary" id="scanBtn">
+                            <i class="fas fa-camera"></i> Scan Product
+                        </button>
+                        <button class="btn btn-secondary" id="uploadProductBtn">
+                            <i class="fas fa-upload"></i> Upload Image
+                        </button>
+                    </div>
+                </div>
+                <div class="product-analysis glass-card" id="productAnalysis">
+                    <div class="product-header">
+                        <div class="product-image">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Organic Whole Grain Cereal</h3>
+                            <p>Brand: HealthFirst</p>
+                        </div>
+                    </div>
+                    <div class="health-score">
+                        <div class="score-circle green">
+                            <span class="score-value">85</span>
+                            <span class="score-label">Healthy</span>
+                        </div>
+                    </div>
+                    <div class="nutrition-facts">
+                        <h4>Nutrition Facts (per serving)</h4>
+                        <div class="nutrition-grid">
+                            <div class="nutrition-item">
+                                <span>Calories</span>
+                                <span>150 kcal</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span>Protein</span>
+                                <span>8g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span>Carbs</span>
+                                <span>25g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span>Fiber</span>
+                                <span>5g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span>Sugar</span>
+                                <span>3g</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span>Fat</span>
+                                <span>2g</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-verdict">
+                        <div class="verdict-badge success">
+                            <i class="fas fa-check-circle"></i> Recommended
+                        </div>
+                        <p>This product is high in fiber and protein, making it a healthy choice for your diet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unified Document Analyzer Section -->
+    <section class="unified-section" id="unified">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Unified AI Document Analyzer</h2>
+                <p class="section-subtitle">Deep healthcare insights for reports, product ingredients, and diet planners</p>
+            </div>
+            
+            <div class="unified-analyzer-container" style="display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 1100px; margin: 0 auto;">
+                
+                <!-- Input Panel -->
+                <div class="analyzer-input-panel glass-card" style="padding: 35px;">
+                    <form id="unifiedAnalysisForm">
+                        
+                        <!-- Profile/User Data Grid -->
+                        <h4 style="margin-bottom: 20px; color: var(--primary-color); border-bottom: 2px solid rgba(180, 140, 199, 0.15); padding-bottom: 10px;">
+                            <i class="fas fa-user-circle"></i> 1. Health Profile Details
+                        </h4>
+                        <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedName" style="font-weight: 500; font-size: 0.9rem;">Full Name</label>
+                                <input type="text" id="unifiedName" placeholder="e.g. John Doe" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedAge" style="font-weight: 500; font-size: 0.9rem;">Age</label>
+                                <input type="number" id="unifiedAge" min="1" max="120" placeholder="e.g. 35" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedGender" style="font-weight: 500; font-size: 0.9rem;">Gender</label>
+                                <select id="unifiedGender" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none; height: 48px;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedWeight" style="font-weight: 500; font-size: 0.9rem;">Weight (kg)</label>
+                                <input type="number" id="unifiedWeight" placeholder="e.g. 70" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedHeight" style="font-weight: 500; font-size: 0.9rem;">Height (cm)</label>
+                                <input type="number" id="unifiedHeight" placeholder="e.g. 175" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedGoal" style="font-weight: 500; font-size: 0.9rem;">Fitness / Health Goal</label>
+                                <input type="text" id="unifiedGoal" placeholder="e.g. Lower cholesterol, weight loss" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedConditions" style="font-weight: 500; font-size: 0.9rem;">Medical Conditions</label>
+                                <input type="text" id="unifiedConditions" placeholder="e.g. Hypertension, Pre-diabetes, None" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedDiet" style="font-weight: 500; font-size: 0.9rem;">Diet Preference</label>
+                                <select id="unifiedDiet" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none; height: 48px;">
+                                    <option value="Balanced">Balanced</option>
+                                    <option value="Vegetarian">Vegetarian</option>
+                                    <option value="Vegan">Vegan</option>
+                                    <option value="Low Carb">Low Carb / Keto</option>
+                                    <option value="Diabetic-friendly">Diabetic-friendly</option>
+                                    <option value="Indian Vegetarian">Indian Vegetarian</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Scan Type and Input Block -->
+                        <h4 style="margin-bottom: 20px; color: var(--primary-color); border-bottom: 2px solid rgba(180, 140, 199, 0.15); padding-bottom: 10px;">
+                            <i class="fas fa-file-medical"></i> 2. Document & Analysis Options
+                        </h4>
+                        
+                        <div class="input-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                            <div style="display: flex; flex-direction: column; gap: 20px;">
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label for="unifiedScanType" style="font-weight: 500; font-size: 0.9rem;">Analysis/Scan Type</label>
+                                    <select id="unifiedScanType" required style="padding: 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none; height: 48px;">
+                                        <option value="product_scan">Product Label / Ingredients Scanner</option>
+                                        <option value="blood_report">Blood Test Report</option>
+                                        <option value="health_report">General Medical/Health Report</option>
+                                        <option value="diet_planner">Diet Planner Request</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <label style="font-weight: 500; font-size: 0.9rem;">Upload File / Label Image (Optional)</label>
+                                    <div class="upload-box glass-card" id="unifiedUploadBox" style="padding: 30px 20px; margin-bottom: 0; border-style: dashed;">
+                                        <div class="upload-content" id="unifiedUploadContent">
+                                            <i class="fas fa-camera" style="font-size: 2.5rem; margin-bottom: 10px; color: var(--primary-color);"></i>
+                                            <h5 style="margin-bottom: 5px;">Upload Document Scan</h5>
+                                            <p style="font-size: 0.8rem; margin-bottom: 15px; opacity: 0.7;">Supports JPG, PNG, PDF</p>
+                                            <input type="file" id="unifiedFileInput" accept=".pdf,.jpg,.jpeg,.png" hidden>
+                                            <button type="button" class="btn btn-secondary" id="unifiedBrowseBtn" style="padding: 8px 18px; font-size: 0.85rem;">
+                                                Select File
+                                            </button>
+                                        </div>
+                                        <div class="file-preview" id="unifiedFilePreview" style="display: none; padding: 10px; align-items: center; justify-content: space-between;">
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <i class="fas fa-file-image" style="font-size: 1.5rem;"></i>
+                                                <span id="unifiedFileName" style="font-size: 0.85rem; font-weight: 500;">document.jpg</span>
+                                            </div>
+                                            <button type="button" class="remove-file" id="unifiedRemoveFile" style="width: 25px; height: 25px; font-size: 0.75rem;">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="unifiedTextData" style="font-weight: 500; font-size: 0.9rem;">Paste OCR Data / Ingredients / Readings (Optional)</label>
+                                <textarea id="unifiedTextData" placeholder="Paste ingredients list (e.g. Sugar, cocoa butter, artificial flavors...) or medical readings (e.g. Glucose 140 mg/dL, Cholesterol 240...)" style="padding: 15px; border-radius: 15px; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.5); outline: none; height: 195px; font-family: inherit; font-size: 0.9rem; resize: none;"></textarea>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+                            <button type="submit" class="btn btn-primary glow-btn" id="unifiedSubmitBtn" style="padding: 15px 40px; font-size: 1.05rem;">
+                                <i class="fas fa-magic"></i> Run AI Analysis Report
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Loading Animation -->
+                <div class="loading-animation" id="unifiedLoading" style="display: none; width: 100%;">
+                    <div class="doc-scan-hud glass-card" style="padding: 40px; text-align: center;">
+                        <div class="doc-scan-visual">
+                            <i class="fas fa-stethoscope"></i>
+                            <div class="doc-scan-laser"></div>
+                        </div>
+                        <div class="doc-scan-percentage" id="unifiedScanPercent">0%</div>
+                        <div class="doc-scan-progress-wrapper">
+                            <div class="doc-scan-progress-fill" id="unifiedScanProgressFill"></div>
+                        </div>
+                        <h4 style="color: var(--primary-color); margin-top: 10px;">Vita Nova AI is Analyzing</h4>
+                        <ul class="doc-scan-checklist">
+                            <li id="unifiedStep1" class="pending"><i class="fas fa-circle-notch fa-spin-slow"></i> <span>Parsing health profile variables...</span></li>
+                            <li id="unifiedStep2" class="pending"><i class="far fa-circle"></i> <span>Scanning document ingredients / OCR data...</span></li>
+                            <li id="unifiedStep3" class="pending"><i class="far fa-circle"></i> <span>Checking reference ranges & allergen risk...</span></li>
+                            <li id="unifiedStep4" class="pending"><i class="far fa-circle"></i> <span>Generating dietitian summary & advice...</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Results Display Card -->
+                <div class="unified-results-card glass-card" id="unifiedResults" style="display: none; padding: 40px;">
+                    
+                    <!-- Result Summary Header -->
+                    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(180, 140, 199, 0.2); padding-bottom: 25px; margin-bottom: 30px; gap: 20px;">
+                        <div>
+                            <span id="unifiedResultBadge" class="verdict-badge success" style="margin-bottom: 10px; display: inline-flex;">
+                                <i class="fas fa-file-shield"></i> Analysis Complete
+                            </span>
+                            <h3 id="unifiedResultTitle" style="font-size: 1.8rem; margin: 0; color: var(--primary-color);">
+                                Health Assessment Report
+                            </h3>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;" id="unifiedResultMeta">
+                                Analyzed on 2026-05-26 | For John Doe
+                            </p>
+                        </div>
+                        
+                        <!-- Confidence Level Gauge Card -->
+                        <div class="confidence-gauge-card" style="display: flex; align-items: center; gap: 15px; padding: 15px 25px; background: rgba(255, 203, 164, 0.25); border: 1px solid rgba(180, 140, 199, 0.2); border-radius: 15px;">
+                            <div class="gauge-spinner-box" style="position: relative; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+                                <svg width="60" height="60" style="transform: rotate(-90deg);">
+                                    <circle cx="30" cy="30" r="26" stroke="rgba(180, 140, 199, 0.2)" stroke-width="5" fill="transparent"/>
+                                    <circle id="confidenceIndicatorCircle" cx="30" cy="30" r="26" stroke="var(--primary-color)" stroke-dasharray="163.36" stroke-dashoffset="16.33" stroke-width="5" fill="transparent" style="transition: stroke-dashoffset 1s ease-out;"/>
+                                </svg>
+                                <span id="confidencePercentText" style="position: absolute; font-size: 0.95rem; font-weight: 700; color: var(--primary-color);">90%</span>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; color: var(--text-secondary); display: block;">
+                                    Confidence
+                                </span>
+                                <span style="font-weight: 700; font-size: 1rem; color: var(--primary-color);">Vita Nova AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Markdown Output Container -->
+                    <div class="markdown-analysis-output" id="markdownOutput" style="margin-bottom: 30px; line-height: 1.7;">
+                        <!-- Styled HTML content parsed from Markdown goes here -->
+                    </div>
+
+                    <!-- Confidence Details / Reasons Section -->
+                    <div id="confidenceReasonSection" style="padding: 20px; background: rgba(180, 140, 199, 0.08); border-left: 4px solid var(--accent-color); border-radius: 0 12px 12px 0;">
+                        <h5 style="margin: 0 0 10px 0; color: var(--primary-color); display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-clipboard-list"></i> Confidence Assessment Reasons
+                        </h5>
+                        <div id="confidenceReasonContent" style="font-size: 0.9rem; color: var(--text-secondary);">
+                            <!-- Reasons bullet points -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Diet Plan Section -->
+    <section class="diet-section" id="diet">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Your Personalized Diet Plan</h2>
+                <p class="section-subtitle">AI-generated meal plan based on your health profile</p>
+            </div>
+            <div class="diet-plan-container">
+                <!-- Standalone Diet Plan Form -->
+                <div class="diet-form-card glass-card" id="dietFormCard" style="margin-bottom: 40px; padding: 30px; width: 100%;">
+                    <form id="dietPlanForm" class="diet-plan-form">
+                        <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietAge" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Age</label>
+                                <input type="number" id="dietAge" min="1" max="120" placeholder="e.g. 35" required style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietGender" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Gender</label>
+                                <select id="dietGender" required style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease; appearance: none; -webkit-appearance: none;">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietWeight" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Weight (kg)</label>
+                                <input type="number" id="dietWeight" min="1" max="300" placeholder="e.g. 70" required style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietHeight" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Height (cm)</label>
+                                <input type="number" id="dietHeight" min="50" max="250" placeholder="e.g. 175" required style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietSugar" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Blood Sugar (mg/dL) <span style="font-size: 0.8rem; opacity: 0.7;">(Optional)</span></label>
+                                <input type="number" id="dietSugar" min="1" max="500" placeholder="e.g. 110" style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease;">
+                            </div>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+                                <label for="dietPreference" style="font-weight: 500; color: var(--text-primary); font-size: 0.95rem;">Diet Preference</label>
+                                <select id="dietPreference" required style="padding: 12px; border-radius: 10px; border: 1px solid rgba(180, 140, 199, 0.28); background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 0.95rem; color: var(--text-primary); outline: none; transition: all 0.3s ease; appearance: none; -webkit-appearance: none;">
+                                    <option value="Balanced">Balanced Diet</option>
+                                    <option value="Vegetarian">Vegetarian</option>
+                                    <option value="Vegan">Vegan</option>
+                                    <option value="Low Carb">Low Carb / Keto</option>
+                                    <option value="Diabetic-friendly">Diabetic-friendly</option>
+                                    <option value="Indian Vegetarian">Indian Vegetarian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions" style="display: flex; justify-content: center;">
+                            <button type="submit" class="btn btn-primary glow-btn" id="generateDietBtn" style="padding: 14px 28px;">
+                                <i class="fas fa-magic"></i> Generate Personalized Meal Plan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="loading-animation" id="dietLoadingAnimation" style="display: none; margin: 30px auto; text-align: center; width: 100%;">
+                    <div class="spinner"></div>
+                    <p style="color: var(--text-secondary); margin-top: 10px;">AI Generating Your Custom Diet Plan...</p>
+                </div>
+
+                <!-- This will be filled dynamically by displayDietPlan -->
+                <div id="dietPlanResult" class="diet-plan-result-container" style="width: 100%;">
+                    <div class="diet-summary glass-card">
+                        <div class="summary-item">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <span class="summary-value">1,800</span>
+                                <span class="summary-label">Daily Calories</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <span class="summary-value">8</span>
+                                <span class="summary-label">Glasses of Water</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <div>
+                                <span class="summary-value">30</span>
+                                <span class="summary-label">Minutes Exercise</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="meal-cards">
+                        <div class="meal-card glass-card">
+                            <div class="meal-header breakfast">
+                                <i class="fas fa-sun"></i>
+                                <h3>Breakfast</h3>
+                                <span class="meal-calories">350 kcal</span>
+                            </div>
+                            <div class="meal-content">
+                                <ul>
+                                    <li>Oatmeal with fruits</li>
+                                    <li>Greek yogurt</li>
+                                    <li>Green tea</li>
+                                    <li>Almonds (5 pieces)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="meal-card glass-card">
+                            <div class="meal-header lunch">
+                                <i class="fas fa-cloud-sun"></i>
+                                <h3>Lunch</h3>
+                                <span class="meal-calories">550 kcal</span>
+                            </div>
+                            <div class="meal-content">
+                                <ul>
+                                    <li>Grilled chicken salad</li>
+                                    <li>Brown rice</li>
+                                    <li>Steamed vegetables</li>
+                                    <li>Buttermilk</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="meal-card glass-card">
+                            <div class="meal-header snacks">
+                                <i class="fas fa-cookie"></i>
+                                <h3>Snacks</h3>
+                                <span class="meal-calories">200 kcal</span>
+                            </div>
+                            <div class="meal-content">
+                                <ul>
+                                    <li>Apple with peanut butter</li>
+                                    <li>Roasted chickpeas</li>
+                                    <li>Green smoothie</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="meal-card glass-card">
+                            <div class="meal-header dinner">
+                                <i class="fas fa-moon"></i>
+                                <h3>Dinner</h3>
+                                <span class="meal-calories">500 kcal</span>
+                            </div>
+                            <div class="meal-content">
+                                <ul>
+                                    <li>Grilled fish</li>
+                                    <li>Quinoa</li>
+                                    <li>Mixed vegetables</li>
+                                    <li>Herbal tea</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chatbot-info">
+                    <h4>AI Nutrition Assistant</h4>
+                    <span class="online-status">Online</span>
+                </div>
+                <button class="close-chat" id="closeChat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message ai-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI nutrition assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type your message...">
+                <button class="send-btn" id="sendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature API Modules -->
+    <script src="apis/api-config.js"></script>
+    <script src="apis/medical-report-api.js"></script>
+    <script src="apis/scanner-api.js"></script>
+    <script src="apis/chatbot-api.js"></script>
+    <script src="apis/diet-plan-api.js"></script>
+    <script src="apis/health-analytics-api.js"></script>
+    <script src="apis/unified-analysis-api.js"></script>
+    
+    <!-- Integration Bridge -->
+    <script src="apis/feature-integration.js"></script>
+
+    <script src="api-integration.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
