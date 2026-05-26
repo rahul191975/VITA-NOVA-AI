@@ -53,9 +53,3 @@ AI-powered Healthcare & Diet Planner that helps users with **personalized diet p
 
 ---
 
-## 📦 Installation
-
-### 1. Clone Repository
-```bash
-git clone https://github.com/your-username/vita-nova-ai.git
-cd vita-nova-ai
